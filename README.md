@@ -1,4 +1,4 @@
-# PHP php photo search
+# PHP photo search
 English|[中文](https://github.com/hanyixuanten/photo_searcher/blob/master/README_zh.md)
 ### How to use it
 #### 1. Environment: nginx or apache+php7.4
