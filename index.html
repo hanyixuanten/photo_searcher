@@ -9,9 +9,15 @@
         </script>
     </head>
     <body>
-        <input type="text" name="q" id="q"></input>
-        <input type="submit" value="Submit" onclick="myfunction()"></input>
-        <p id="gen" ></p>
+        <div style="display:flex; justify-content:center; align-items:center; height:100vh;">
+            <div style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
+                <label for="q" style="margin-bottom:10px;">Search:</label>
+                <input type="text" name="q" id="q" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"></input>
+                <button onclick="myfunction()" style="margin-top:10px; padding:5px 10px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); background-color:#4CAF50; color:white;">Submit</button>
+                <p id="gen" ></p>
+            </div>
+        </div>
+        
         <iframe id="show"
                 name="show"
                 title="show"
@@ -23,7 +29,7 @@
         </iframe>
         <script>
             function myfunction(){
-                var x="正在生成";
+                var x="正在搜索";
                 document.getElementById("gen").innerHTML=x;
                 document.getElementById("show").src="search.php?q="+document.getElementById("q").value;
                 var iframe = document.getElementById("show");
