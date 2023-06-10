@@ -5,6 +5,7 @@
 		<title>search</title>
 	</head>
 	<?php
+		$api_response=[];
 		if($_GET [ 'q' ]!=""){
 			$api_endpoint = 'https://modelscope.cn/api/v1/studio/damo/chinese_clip_applications/gradio/api/predict/';
 			$p=$_GET [ 'q' ];
@@ -15,11 +16,10 @@
 			curl_setopt($ch, CURLOPT_POST, true);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $api_query);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch,CURLOPT_TIMEOUT, $iCurlTimeout);
 			$rp=curl_exec($ch);
 			$api_response = json_decode($rp, true)["data"][0];
-			
 			curl_close($ch);
-			
 		}
 			
 	?>
