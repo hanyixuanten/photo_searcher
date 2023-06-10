@@ -25,11 +25,11 @@
 	?>
 	<body>
 		<br>		 
-<script>
-    var api_response = <?=json_encode($api_response)?>;
-    for (var i = 0; i < api_response.length; i++) {
-        document.write("<img src='" + api_response[i] + "' alt='" + api_response[i] + "'>");
-    }
-</script>
+		<script>
+			var api_response = <?=json_encode($api_response)?>;
+			for (var i = 0; i < api_response.length; i++) {
+				document.write("<img src='" + api_response[i] + "' alt='" + api_response[i] + "'>");
+			}
+		</script>
 	</body>
 </html>
