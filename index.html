@@ -31,12 +31,12 @@
                 var x="正在搜索";
                 document.getElementById("gen").innerHTML=x;
                 document.getElementById("show").src="search.php?q="+document.getElementById("q").value;
-                var iframe = document.getElementById("show");
-                iframe.height = document.documentElement.clientHeight-200;
+                document.getElementById("show").height = document.documentElement.clientHeight-200;
             }
             function changeFrameHeight() {
-                var iframe = document.getElementById("show");
-                iframe.height = document.documentElement.clientHeight-200;
+                document.getElementById("show").height = document.documentElement.clientHeight-200;
+                var x="搜索完毕";
+                document.getElementById("gen").innerHTML=x;
             }
             window.onresize = function() {
                 changeFrameHeight();
