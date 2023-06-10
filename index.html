@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>图片搜索</title>
+        <script>
+            function myfunction(){}
+            function changeFrameHeight() {}
+        </script>
+    </head>
+    <body>
+        <input type="text" name="q" id="q"></input>
+        <input type="submit" value="Submit" onclick="myfunction()"></input>
+        <p id="gen" ></p>
+        <iframe id="show"
+                name="show"
+                title="show"
+                height="100%"
+                width="100%"
+                scrolling="auto"
+                frameborder="0"
+                onload="changeFrameHeight()">
+        </iframe>
+        <script>
+            function myfunction(){
+                var x="正在生成";
+                document.getElementById("gen").innerHTML=x;
+                document.getElementById("show").src="search.php?q="+document.getElementById("q").value;
+                var iframe = document.getElementById("show");
+                iframe.height = document.documentElement.clientHeight-100;
+            }
+            function changeFrameHeight() {
+                var iframe = document.getElementById("show");
+                iframe.height = document.documentElement.clientHeight-100;
+            }
+                //onresize属性可以用来获取或设置当前窗口的resize事件的事件处理函数
+                //onresize事件会在窗口或框架被调整大小时发生
+            window.onresize = function() {
+                changeFrameHeight();
+            }
+        </script>
+    </body>
+</html>
