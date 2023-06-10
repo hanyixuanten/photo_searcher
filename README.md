@@ -1,4 +1,5 @@
 # PHP photo search
+English|[Chinese](https://github.com/hanyixuanten/photo_searcher/blob/master/README_zh.md)
 ### How to use it
 #### 1. Environment: nginx or apache+php7.4
 #### 2. Go to https://github.com/hanyixuanten/photo_searcher/releases Download the latest version of Source code (zip/tar.gz)
