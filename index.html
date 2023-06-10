@@ -8,9 +8,9 @@
             function changeFrameHeight() {}
         </script>
     </head>
-    <body onkeydown="if(event.keyCode===13) document.all.login.click()">
+    <body>
         <input type="text" name="q" id="q"></input>
-        <input type="submit" value="Submit" onclick="myfunction()" id="login"></input>
+        <input type="submit" value="Submit" onclick="myfunction()" @keyup.enter="submit"></input>
         <p id="gen" ></p>
         <iframe id="show"
                 name="show"
