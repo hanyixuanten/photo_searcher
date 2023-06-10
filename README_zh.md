@@ -1,4 +1,4 @@
-# php 照片搜索
+# PHP 照片搜索
 [English](https://github.com/hanyixuanten/photo_searcher/blob/master/README.md)|中文
 ### 使用方法
 #### 1.环境：nginx或apache+php7.4
