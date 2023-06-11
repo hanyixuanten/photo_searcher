@@ -2,7 +2,7 @@
 <html lang="ZH-CN">
 	<head>
 		<meta charset="utf-8">
-		<title>search</title>
+		<title>搜索</title>
 	</head>
 	<?php
 		$api_response=[];
