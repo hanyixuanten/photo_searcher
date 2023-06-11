@@ -5,7 +5,6 @@
         <title>图片搜索</title>
         <script>
             function fun(){}
-            function cfh(){}
             function a(){}
         </script>
     </head>
@@ -28,14 +27,12 @@
                 show.src="search.php?q="+document.getElementById("q").value;
                 show.height = document.documentElement.clientHeight-200;
             }
-            function cfh() {
-                show.height = document.documentElement.clientHeight-200;
-            }
             window.onresize = function() {
-                cfh();
+                show.height = document.documentElement.clientHeight-200;
             }
             function a(){
                 gen.innerHTML="搜索完毕";
+                show.height = document.documentElement.clientHeight-200;
             }
         </script>
     </body>
