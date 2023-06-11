@@ -6,8 +6,6 @@
         <script>
             function fun(){}
             function a(){}
-            const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
-
         </script>
     </head>
     <body>
