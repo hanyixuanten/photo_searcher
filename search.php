@@ -6,9 +6,9 @@
 	</head>
 	<?php
 		$api_response=[];
-		if($_GET [ 'q' ]!=""){
+		$p=$_GET [ 'q' ];
+		if($p!=""){
 			$api_endpoint = 'https://modelscope.cn/api/v1/studio/damo/chinese_clip_applications/gradio/api/predict/';
-			$p=$_GET [ 'q' ];
 			$api_query = "{\"fn_index\":0,\"data\":[\"$p\",300,\"中文CLIP(Base)\",\"是\"]}";
 			$iCurlTimeout = 120;
 			$ch = curl_init();
