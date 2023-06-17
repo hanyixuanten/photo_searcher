@@ -9,7 +9,7 @@
         </script>
     </head>
     <body>
-    <a href='update/update.php' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;'>查找更新</a>
+        <a href='update/update.php' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;'>查找更新</a>
         <div style="display:flex; justify-content:center; align-items:center;height:100vh;" id="m">
             <div style="display:flex; flex-direction:column; justify-content:center; align-items:center;">
                 <label for="q" style="margin-bottom:10px;">搜索:</label>
