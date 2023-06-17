@@ -26,14 +26,14 @@
             function fun(){
                 gen.innerHTML="正在搜索";
                 show.src="search.php?q="+document.getElementById("q").value;
-                show.height = document.documentElement.clientHeight-200;
+                show.height = document.documentElement.clientHeight-250;
             }
             window.onresize = function() {
-                show.height = document.documentElement.clientHeight-200;
+                show.height = document.documentElement.clientHeight-250;
             }
             function a(){
                 gen.innerHTML="搜索完毕";
-                show.height = document.documentElement.clientHeight-200;
+                show.height = document.documentElement.clientHeight-250;
                 document.getElementById("m").style="display:flex; justify-content:center; align-items:center;";
             }
         </script>
