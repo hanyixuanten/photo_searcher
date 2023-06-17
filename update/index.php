@@ -11,6 +11,6 @@
         echo 'This is the latest relese!';
     }else{
         echo 'There is a new relese!';
-        echo "<a href='https://github.com/hanyixuanten/photo_searcher/releases/latest'>download</a>";
+        echo "<a href='https://github.com/hanyixuanten/photo_searcher/releases/latest' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">Download</a>";
     }
 ?>
