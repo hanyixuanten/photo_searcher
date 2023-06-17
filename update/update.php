@@ -7,10 +7,9 @@
     curl_setopt($ch, CURLOPT_HTTPHEADER, ['User-Agent: PHP']);
     $response = json_decode(curl_exec($ch), true);
     curl_close($ch);
-    $latest_js=$response;
-    $latest_v=$latest_js['tag_name'];
+    $latest_v=$response['tag_name'];
     $now_v=json_decode(file_get_contents("manifast.json"),true)["version"];
-    if($latest_js['tag_name']==$now_v){
+    if($latest_v==$now_v){
         echo 'This is the latest relese!';
     }else{
         echo 'There is a new relese!';
