@@ -1,3 +1,18 @@
+<?php
+// Set the content type
+header('Content-type: text/html');
+
+// Set the cache control headers for the HTML page
+header('Cache-Control: public');
+header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400) . ' GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime(__FILE__)) . ' GMT');
+
+// Set the cache control headers for the CSS file
+header('Cache-Control: public');
+header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400) . ' GMT');
+header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' GMT');
+
+?>
 <!DOCTYPE html>
 <html lang="zh-CN">
     <link rel="stylesheet" href="./index.css">
