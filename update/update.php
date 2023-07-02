@@ -17,8 +17,9 @@
             echo '有可更新的版本！';
             echo "<a href='https://api.github.com/repos/hanyixuanten/photo_searcher/zipball/$latest_v' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">Download zip</a>";
             echo "<a href='https://api.github.com/repos/hanyixuanten/photo_searcher/tarball/$latest_v' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">Download tar.gz</a>";
-            echo "<a href='https://github.com/hanyixuanten/photo_searcher/releases/latest' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">查看更新日志</a>";
+            
         }
+        echo '<br />更新日志：<br />'.$response["body"];
     }
     else{
         header("Location: login.php");
