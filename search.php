@@ -19,6 +19,13 @@
 			curl_setopt($ch,CURLOPT_TIMEOUT, $iCurlTimeout);
 			$rp=curl_exec($ch);
 			$api_response = json_decode($rp, true)["data"][0];
+			$httpcode=curl_getinfo($ch,CURLINFO_HTTP_CODE);
+			if($httpcode==500){
+			    echo "您输入的内容不符合网站要求，请您更换后试试~";
+			}
+			elseif($httpcode!=200){
+				echo error;
+			}
 			curl_close($ch);
 		}
 			
