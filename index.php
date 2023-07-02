@@ -4,12 +4,12 @@ header('Content-type: text/html');
 
 // Set the cache control headers for the HTML page
 header('Cache-Control: public');
-header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400) . ' GMT');
+header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
 header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime(__FILE__)) . ' GMT');
 
 // Set the cache control headers for the CSS file
 header('Cache-Control: public');
-header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 86400) . ' GMT');
+header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
 header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' GMT');
 
 ?>
@@ -26,6 +26,11 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
     </head>
     <body>
         <a href='update/update.php' id="upd_button">查找更新</a>
+        <div id="yiyan">
+            <p>一言</p>
+            <hr />
+            <?php echo json_decode(file_get_contents("https://international.v1.hitokoto.cn?c=d&e&f&g&h&i&j&k&l"),true)["hitokoto"];?> 
+        </div>
         <div id="div1" style="display:flex; justify-content:center; align-items:center;height:100vh;">
             <div id="div2">
                 <label for="q" style="margin-bottom:10px;">搜索:</label>
@@ -34,7 +39,7 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
                 <p id="gen" style="font-size: 20px;color: blue;"></p>
             </div>
         </div>
-        <iframe id="show" title="show" height="100%" width="100%" scrolling="auto" frameborder="0" onload="a()">
+        <iframe id="show" title="show" height="100%" width="100%" scrolling="auto" frameborder="0" onload="a()" >
         </iframe>
         <script>
             var gen=document.getElementById("gen");
