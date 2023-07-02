@@ -12,11 +12,12 @@
         $latest_v=$response['tag_name'];
         $now_v=json_decode(file_get_contents("manifast.json"),true)["version"];
         if($latest_v==$now_v){
-            echo 'This is the latest relese!';
+            echo '这是最新版！';
         }else{
-            echo 'There is a new relese!';
+            echo '有可更新的版本！';
             echo "<a href='https://api.github.com/repos/hanyixuanten/photo_searcher/zipball/$latest_v' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">Download zip</a>";
             echo "<a href='https://api.github.com/repos/hanyixuanten/photo_searcher/tarball/$latest_v' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">Download tar.gz</a>";
+            echo "<a href='https://github.com/hanyixuanten/photo_searcher/releases/latest' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;' target=\"_blank\">查看更新日志</a>";
         }
     }
     else{
