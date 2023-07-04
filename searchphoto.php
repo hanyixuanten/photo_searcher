@@ -1,6 +1,6 @@
 <?php
     $p=$_POST["q"];
-    $api_query = "{\"fn_index\":2,\"data\":[\"$p\",1000,\"中文CLIP(Base)\",\"是\"]}";
+    $api_query = "{\"fn_index\":2,\"data\":[\"$p\",50,\"中文CLIP(Base)\",\"是\"]}";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://modelscope.cn/api/v1/studio/damo/chinese_clip_applications/gradio/api/predict/');
     curl_setopt($ch, CURLOPT_POST, true);

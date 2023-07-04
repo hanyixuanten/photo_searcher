@@ -10,16 +10,6 @@ function convertToBase64(file) {
     reader.readAsDataURL(file);
     });
 }
-// // 获取input元素
-// const input = document.getElementById('q');
-// // 监听input元素的change事件
-// input.addEventListener('change', async (event) => {
-//     const file = event.target.files[0];
-//     const base64_s = await convertToBase64(file);
-
-// // 在这里使用base64编码进行处理
-// // ...
-// });
 async function fun() {//点击按钮后
     gen.innerHTML = "正在搜索";
     if(searchType.value=="photos"){
