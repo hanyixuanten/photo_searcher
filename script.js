@@ -45,9 +45,11 @@ function choose(){
         q.style="";
         q.multiple="multiple"
         q.type="file";
+        q.accept="image/png, image/jpeg";
     }else{
         q.style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);";
         q.multiple="";
         q.type="text";
+        
     }
 }
