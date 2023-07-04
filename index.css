@@ -31,3 +31,13 @@ body {
     right: 0; /* Position div at the right */
     width: 200px;
 }
+#select {
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+#searchType {
+    height: 30px;
+    width: 90px;
+}
