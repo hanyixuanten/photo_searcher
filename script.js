@@ -2,7 +2,21 @@ var gen=document.getElementById("gen");
 var show=document.getElementById("show");
 var q=document.getElementById("q");
 var searchType=document.getElementById("searchType");
-function convertToBase64(file) {
+var button = document.getElementById('fun');
+button.addEventListener('click', async function() {
+    gen.innerHTML = "正在搜索";
+    if(searchType.value=="photos"){
+        const file = q.files[0];
+        const base64_s = await convertToBase64(file);
+        document.getElementById("framef").value=base64_s;
+        document.getElementById("form1").submit();
+
+    }else if(searchType.value=="texts"){
+        show.src = "search.php?q=" + q.value;
+    }
+    show.height = document.documentElement.clientHeight - 275;
+});
+function convertToBase64(file) {//base64转换
     return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onload = () => resolve(reader.result);
@@ -10,27 +24,15 @@ function convertToBase64(file) {
     reader.readAsDataURL(file);
     });
 }
-async function fun() {//点击按钮后
-    gen.innerHTML = "正在搜索";
-    if(searchType.value=="photos"){
-        const file = q.files[0];
-        const base64_s = await convertToBase64(file);
-        document.getElementById("framef").value=base64_s;
-        document.getElementById("form1").submit();
-    }else if(searchType.value=="texts"){
-        show.src = "search.php?q=" + q.value;
-    }
-    show.height = document.documentElement.clientHeight - 275;
-}
-window.onresize = function() {
+window.onresize = function() {//窗口大小更改后
     show.height = document.documentElement.clientHeight-275;
 }
-function a(){//iframe加载完毕后
+show.onload=function(){
     gen.innerHTML="搜索完毕";
     show.height = document.documentElement.clientHeight-275;
     document.getElementById("div1").style="display:flex; justify-content:center; align-items:center;";
 }
-function choose(){
+function choose(){//选择更改后
     if(searchType.value=="photos"){
         q.style="";
         q.multiple="multiple"
