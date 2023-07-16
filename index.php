@@ -33,13 +33,16 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
             <div id="div2">
                 <label for="q" style="margin-bottom:10px;">搜索:</label>
                 <input type="text" id="q" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"></input>
+                <label for="q" style="margin-bottom:10px;">搜索数量:</label>
+                <input type="number" id="num" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" min="10" max="1000"></input>
                 <!-- <input type="file" name="q" id="q" multiple="multiple" /> -->
                 <button id="fun" style="margin-top:10px; padding:5px 10px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); background-color:#4CAF50; color:white;">Submit</button>
                 <p id="gen" style="font-size: 20px;color: blue;"></p>
             </div>
         </div>
         <form id="form1" target="show" method="post" action="searchphoto.php">
-            <input name="q" id="framef" type="hidden">
+            <input name="q" id="framef" type="hidden"></input>
+            <input name="nums" id="nums" type="hidden"></input>
         </form>
         <iframe name="show" id="show" title="show" height="100%" width="100%" scrolling="auto" frameborder="0"></iframe>
         <script src="script.js"></script>
