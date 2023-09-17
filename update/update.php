@@ -2,7 +2,7 @@
 <br>
 <?php
     include "passwd.php";
-    if($_COOKIE[r]==hash("sha256", $passwd)){
+    if($_COOKIE["r"]==hash("sha256", $passwd)){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/hanyixuanten/photo_searcher/releases/latest');
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

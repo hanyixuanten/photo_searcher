@@ -1,22 +1,25 @@
-var gen=document.getElementById("gen");
-var show=document.getElementById("show");
-var q=document.getElementById("q");
-var searchType=document.getElementById("searchType");
-var button = document.getElementById('fun');
-var num=document.getElementById('num');
+var gen=document.getElementById("gen"); // 正在搜索，搜索完毕
+var show=document.getElementById("show"); // iframe
+var inputs=document.getElementById("inputs"); // 输入的文本或图片
+var searchType=document.getElementById("searchType"); // 搜索类型
+var button = document.getElementById('fun'); // 提交按钮
+var num=document.getElementById('num'); // 输入的num
+var form=document.getElementById('form1'); // 整个form
+var nums=document.getElementById('nums'); // form的num
+var framef=document.getElementById('framef');
 var resize=335;
 button.addEventListener('click', async function() {
-    gen.innerHTML = "正在搜索";
+    gen.innerHTML = "正在搜索(大约需要2分钟)";
+    nums.value=num.value;
     if(searchType.value=="photos"){
-        const file = q.files[0];
-        const base64_s = await convertToBase64(file);
-        document.getElementById("framef").value=base64_s;
-        document.getElementById("nums").value=num.value;
-        document.getElementById("form1").submit();
-
+        framef.value=await convertToBase64(inputs.files[0]);
+        form.action="searchphoto.php";
     }else if(searchType.value=="texts"){
-        show.src = "search.php?q=" + q.value +"&nums="+num.value;
+        framef.value=inputs.value;
+        form.action="search.php";
+        // show.src = "search.php?q=" + inputs.value +"&nums="+num.value;
     }
+    form.submit();
     show.height = document.documentElement.clientHeight - resize;
 });
 function convertToBase64(file) {//base64转换
@@ -37,14 +40,14 @@ show.onload=function(){
 }
 function choose(){//选择更改后
     if(searchType.value=="photos"){
-        q.style="";
-        q.multiple="multiple"
-        q.type="file";
-        q.accept="image/png, image/jpeg";
+        inputs.style="";
+        inputs.multiple="multiple"
+        inputs.type="file";
+        inputs.accept="image/png, image/jpeg";
     }else{
-        q.style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);";
-        q.multiple="";
-        q.type="text";
+        inputs.style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);";
+        inputs.multiple="";
+        inputs.type="text";
         
     }
 }

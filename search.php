@@ -1,7 +1,7 @@
 <?php
 	$api_response=[];
-	$p=$_GET [ 'q' ];
-	$nums=$_GET["nums"];
+	$p=$_POST [ 'q' ];
+	$nums=$_POST["nums"];
 	if($p!=""){
 		$api_query = "{\"fn_index\":0,\"data\":[\"$p\",$nums,\"中文CLIP(Base)\",\"是\"]}";
 		$ch = curl_init();

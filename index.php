@@ -16,7 +16,7 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
         <title>图片搜索</title>
     </head>
     <body>
-        <a href='update/update.php' id="upd_button">查找更新</a>
+        <a href='update/update.php' id="upd_button">查找更新(for the admin)</a>
         <div id="yiyan"><!-- 一言 -->
             <p>一言</p>
             <hr />
@@ -31,10 +31,10 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
         </div>
         <div id="div1" style="display:flex; justify-content:center; align-items:center;height:100vh;"><!-- 搜索框 -->
             <div id="div2">
-                <label for="q" style="margin-bottom:10px;">搜索:</label>
-                <input type="text" id="q" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"></input>
-                <label for="q" style="margin-bottom:10px;">搜索数量:</label>
-                <input type="number" id="num" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" min="10" max="1000"></input>
+                <label for="inputs" style="margin-bottom:10px;">搜索:</label>
+                <input type="text" id="inputs" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"></input>
+                <label for="num" style="margin-bottom:10px;">搜索数量:</label>
+                <input type="number" id="num" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" min="10" max="1000" value="50"></input>
                 <!-- <input type="file" name="q" id="q" multiple="multiple" /> -->
                 <button id="fun" style="margin-top:10px; padding:5px 10px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); background-color:#4CAF50; color:white;">Submit</button>
                 <p id="gen" style="font-size: 20px;color: blue;"></p>

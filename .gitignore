@@ -1,1 +1,4 @@
 *.test.php
+favicon.ico
+.htaccess
+fileadmin.php
