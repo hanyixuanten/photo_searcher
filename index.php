@@ -1,4 +1,4 @@
-<?php
+<!-- 缓存 --><?php
 header('Content-type: text/html');
 header('Cache-Control: public');
 header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
@@ -7,7 +7,6 @@ header('Cache-Control: public');
 header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
 header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' GMT');
 ?>
-<!-- 缓存 -->
 <!DOCTYPE html>
 <html lang="zh-CN">
     <link rel="stylesheet" href="./index.css">
@@ -31,19 +30,20 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
         </div>
         <div id="div1" style="display:flex; justify-content:center; align-items:center;height:100vh;"><!-- 搜索框 -->
             <div id="div2">
-                <label for="inputs" style="margin-bottom:10px;">搜索:</label>
-                <input type="text" id="inputs" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"></input>
-                <label for="num" style="margin-bottom:10px;">搜索数量:</label>
-                <input type="number" id="num" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" min="10" max="1000" value="50"></input>
-                <!-- <input type="file" name="q" id="q" multiple="multiple" /> -->
-                <button id="fun" style="margin-top:10px; padding:5px 10px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); background-color:#4CAF50; color:white;">Submit</button>
-                <p id="gen" style="font-size: 20px;color: blue;"></p>
+                <label for="inputs" style="margin-bottom:10px;">搜索内容:</label>
+                <input name="inputs" type="text" id="inputs" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);"></input>  
+                <form id="form1" target="show" method="post" action="search.php">
+                    <input type="text" id="base64" name="inputs" style="display: none;"></input>
+                    <button id="fun" type="submit" style="margin-top:10px; padding:5px 10px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75); background-color:#4CAF50; color:white;">Submit</button>
+                    <br><br>
+                    <label for="num" style="margin-bottom:10px;">搜索数量:</label>
+                    <input name="num" type="number" id="num" style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);" min="10" max="1000" value="50"></input>
+                    <br>
+                    <p id="gen" style="font-size: 20px;color: blue;"></p>
+                </form>
             </div>
         </div>
-        <form id="form1" target="show" method="post" action="searchphoto.php">
-            <input name="q" id="framef" type="hidden"></input>
-            <input name="nums" id="nums" type="hidden"></input>
-        </form>
+        
         <iframe name="show" id="show" title="show" height="100%" width="100%" scrolling="auto" frameborder="0"></iframe>
         <script src="script.js"></script>
     </body>

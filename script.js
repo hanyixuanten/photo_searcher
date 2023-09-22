@@ -5,21 +5,18 @@ var searchType=document.getElementById("searchType"); // 搜索类型
 var button = document.getElementById('fun'); // 提交按钮
 var num=document.getElementById('num'); // 输入的num
 var form=document.getElementById('form1'); // 整个form
-var nums=document.getElementById('nums'); // form的num
-var framef=document.getElementById('framef');
-var resize=335;
+var base64=document.getElementById('base64') // hidden input
+var resize=265;
+inputs.onchange = async function(){
+    if(searchType.value=="photos"){
+        base64.value=await convertToBase64(inputs.files[0]);
+    }else{
+        base64.value=inputs.value;
+    }
+    
+}
 button.addEventListener('click', async function() {
     gen.innerHTML = "正在搜索(大约需要2分钟)";
-    nums.value=num.value;
-    if(searchType.value=="photos"){
-        framef.value=await convertToBase64(inputs.files[0]);
-        form.action="searchphoto.php";
-    }else if(searchType.value=="texts"){
-        framef.value=inputs.value;
-        form.action="search.php";
-        // show.src = "search.php?q=" + inputs.value +"&nums="+num.value;
-    }
-    form.submit();
     show.height = document.documentElement.clientHeight - resize;
 });
 function convertToBase64(file) {//base64转换
@@ -44,10 +41,11 @@ function choose(){//选择更改后
         inputs.multiple="multiple"
         inputs.type="file";
         inputs.accept="image/png, image/jpeg";
+        form.action="searchphoto.php";
     }else{
         inputs.style="padding:5px; border-radius:5px; border:none; box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);";
         inputs.multiple="";
         inputs.type="text";
-        
+        form.action="search.php";
     }
 }

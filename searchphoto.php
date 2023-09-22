@@ -1,6 +1,6 @@
 <?php
-    $p=$_POST["q"];
-    $nums=$_POST["nums"];
+    $p=$_POST["inputs"];
+    $nums=$_POST["num"];
     $api_query = "{\"fn_index\":2,\"data\":[\"$p\",$nums,\"中文CLIP(Base)\",\"是\"]}";
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, 'https://modelscope.cn/api/v1/studio/damo/chinese_clip_applications/gradio/api/predict/');
@@ -11,18 +11,13 @@
     $rp=curl_exec($ch);
     $api_response = json_decode($rp, true)["data"][0];
     $httpcode=curl_getinfo($ch,CURLINFO_HTTP_CODE);
-    if($httpcode==500){
-        echo "您输入的内容不符合网站要求，请您更换后试试~";
-    }
-    elseif($httpcode!=200){
-        echo "error";
-    }
+    if($httpcode==500) echo "您输入的内容不符合网站要求，请您更换后试试~";
+    elseif($httpcode!=200) echo "error";
     curl_close($ch);
 ?>
 <br>
 <script>
     var api_response = <?=json_encode($api_response)?>;
-    for (var i = 0; i < api_response.length; i++) {
-        document.write("<img src='" + api_response[i] + "' alt='" + api_response[i] + "'>");
-    }
+    for (var i = 0; i < api_response.length; i++) document.write("<img src='" + api_response[i] + "' alt='" + api_response[i] + "'>");
+
 </script>
