@@ -1,12 +1,3 @@
-<!-- 缓存 --><?php
-header('Content-type: text/html');
-header('Cache-Control: public');
-header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
-header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime(__FILE__)) . ' GMT');
-header('Cache-Control: public');
-header('Expires: ' . gmdate('D, d M Y H:i:s', time() + 3600) . ' GMT');
-header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' GMT');
-?>
 <!DOCTYPE html>
 <html lang="zh-CN">
     <link rel="stylesheet" href="./index.css">
@@ -43,7 +34,6 @@ header('Last-Modified: ' . gmdate('D, d M Y H:i:s', filemtime('index.css')) . ' 
                 </form>
             </div>
         </div>
-        
         <iframe name="show" id="show" title="show" height="100%" width="100%" scrolling="auto" frameborder="0"></iframe>
         <script src="script.js"></script>
     </body>
