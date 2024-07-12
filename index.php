@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <link rel="stylesheet" href="./index.css">
-
 <head>
     <meta charset="UTF-8" />
     <title>图片搜索</title>
@@ -43,5 +42,4 @@
     <iframe name="show" id="show" title="show" height="100%" width="100%" scrolling="auto" frameborder="0"></iframe>
     <script src="script.js"></script>
 </body>
-
 </html>
