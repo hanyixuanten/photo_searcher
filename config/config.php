@@ -1,6 +1,6 @@
 <?php
 $config = array(
-    "use_update" => true,
-    "use_hitokoto" => true
+    'use_update' => true,
+    'use_hitokoto' => true
 );
 ?>
