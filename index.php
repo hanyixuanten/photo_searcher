@@ -15,6 +15,8 @@ include "passwd.php";
     <?php
     if ($config['use_update'] && $_COOKIE["r"]==hash("sha256", $passwd)) {
         echo "<a href='update/update.php' id=\"upd_button\" class=\"heads\">查找更新</a>\n";
+    }
+    if ($_COOKIE["r"]==hash("sha256", $passwd)) {
         echo "<a href='settings.php' id=\"set_button\" class=\"heads\">设置</a>\n";
     }
     if ($config['use_hitokoto']) {

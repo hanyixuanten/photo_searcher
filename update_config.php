@@ -14,4 +14,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "无效的配置键！";
     }
 }
+echo '<script>window.close();</script>';
 ?>
