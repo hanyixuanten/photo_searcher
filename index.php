@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include "config/config.php";
+include "passwd.php";
 ?>
 <html lang="zh-CN">
 <link rel="stylesheet" href="./index.css">
@@ -9,11 +10,12 @@ include "config/config.php";
     <meta charset="UTF-8" />
     <title>图片搜索</title>
 </head>
-
 <body>
+    <a href='login.php' id="login_button" class="heads">登录(仅管理员)</a>
     <?php
-    if ($config['use_update']) {
-        echo "<a href='update/update.php' id=\"upd_button\">查找更新(for the admin)</a>\n";
+    if ($config['use_update'] && $_COOKIE["r"]==hash("sha256", $passwd)) {
+        echo "<a href='update/update.php' id=\"upd_button\" class=\"heads\">查找更新</a>\n";
+        echo "<a href='settings.php' id=\"set_button\" class=\"heads\">设置</a>\n";
     }
     if ($config['use_hitokoto']) {
         echo "<div id=\"yiyan\"><!-- 一言 -->\n";

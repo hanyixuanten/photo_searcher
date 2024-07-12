@@ -1,8 +1,7 @@
 <a href='../index.php' style='background-color: #4CAF50; color: white; padding: 12px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 4px; font-size: 16px;'>返回</a>
 <br>
 <?php
-    include "passwd.php";
-    include "../config/config.php";
+    include "../passwd.php";
     if($_COOKIE["r"]==hash("sha256", $passwd)){
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://api.github.com/repos/hanyixuanten/photo_searcher/releases/latest');
@@ -23,7 +22,7 @@
         echo "<br /> $latest_v 更新日志：<br />".$response["body"];
     }
     else{
-        header("Location: login.php");
+        header("Location: ../login.php");
         exit();
     }
 ?>

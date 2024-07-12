@@ -1,10 +1,13 @@
 <?php
     include "passwd.php";
+    if($_COOKIE["r"]==hash("sha256", $passwd)){
+        header("Location: index.php");
+    }
     if(isset($_POST['submit'])){
         $password = $_POST['password'];
         if($password == $passwd){
             setcookie("r", hash("sha256", $passwd), time()+3600);
-            header("Location: update.php");
+            header("Location: index.php");
             exit();
         }
         else{
