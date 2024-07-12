@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+    include "config/config.php";
+?>
 <html lang="zh-CN">
 <link rel="stylesheet" href="./index.css">
 <head>
@@ -8,10 +11,14 @@
 
 <body>
     <a href='update/update.php' id="upd_button">查找更新(for the admin)</a>
-    <div id="yiyan"><!-- 一言 -->
-        <p>一言</p>
-        <hr />
-        <?php echo json_decode(file_get_contents("https://international.v1.hitokoto.cn?c=d&e&f&g&h&i&j&k&l"),true)["hitokoto"];?>
+        <?php 
+        if($use_hitokoto){
+            echo "<div id=\"yiyan\"><!-- 一言 -->\n";
+            echo "<p>一言</p>\n";
+            echo "<hr />\n";
+            echo json_decode(file_get_contents("https://international.v1.hitokoto.cn?c=d&e&f&g&h&i&j&k&l"),true)["hitokoto"];
+        }
+        ?>
     </div>
     <div id="select"><!-- 搜索类型选择 -->
         <label for="searchType">搜索类型:</label>
