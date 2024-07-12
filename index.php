@@ -12,10 +12,10 @@ include "config/config.php";
 
 <body>
     <?php
-    if ($use_update) {
+    if ($config["use_update"]) {
         echo "<a href='update/update.php' id=\"upd_button\">查找更新(for the admin)</a>\n";
     }
-    if ($use_hitokoto) {
+    if ($config["use_hitokoto"]) {
         echo "<div id=\"yiyan\"><!-- 一言 -->\n";
         echo "<p>一言</p>\n";
         echo "<hr />\n";
